@@ -7,10 +7,25 @@
 .tps-theme--ssn {
   width: 181px !important;
 }
+.tps-theme--ssn__label {
+  width: 96px;
+  text-align: center;
+  justify-content: center;
+}
+.tps-theme--wl__star {
+  color: red !important;
+}
+.tps-theme--wl__content {
+  padding-left: 5px;
+}
 .tps-theme--hop:focus {
   border-color: #37393d !important;
 }
 .tps-theme--cl::after {
   background-color: #0078c2 !important;
   color: white !important;
+}
+
+.form-input__ssn {
+  width: 85px;
 } /*# sourceMappingURL=tps-ui-update.css.map */
