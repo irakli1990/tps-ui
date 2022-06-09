@@ -1,3 +1,25 @@
-.tpsThemeManager {
-  margin: 0;
+.tps-theme {
+  &--money {
+    background-image: url(/bundles/thepaystubswebsite/images/dollar-sign.svg);
+    background-position: 0;
+    border-radius: 5px;
+    padding-left: 65px;
+  }
+
+  &--ssn {
+    width: 181px !important;
+  }
+
+  &--hop {
+    &:focus {
+      border-color: #37393d !important;
+    }
+  }
+
+  &--cl {
+    &::after {
+      background-color: #0078c2 !important;
+      color: white !important;
+    }
+  }
 }
