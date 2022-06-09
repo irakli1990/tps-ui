@@ -8,6 +8,20 @@
 
   &--ssn {
     width: 181px !important;
+    &__label {
+      width: 96px;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+
+  &--wl {
+    &__star {
+      color: red !important;
+    }
+    &__content {
+      padding-left: 5px;
+    }
   }
 
   &--hop {
@@ -21,5 +35,11 @@
       background-color: #0078c2 !important;
       color: white !important;
     }
+  }
+}
+
+.form-input {
+  &__ssn {
+    width: 85px;
   }
 }
