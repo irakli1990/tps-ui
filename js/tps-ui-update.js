@@ -1,3 +1,5 @@
+"use strict";
+
 //COPANY CONSTS
 const COMPANY_NAME_ID = "tps_create_stub_companyProfile_name";
 const COMPANY_NAME_LABEL_HTML =
@@ -51,9 +53,36 @@ const SOCIAL_SECURITY_INPUT_HTML =
   '<label for="tps_create_stub_employeeProfile_socialSecurityNumber_1" class="form-block__label tps-theme--ssn__label">XXX-XX-</label>' +
   '<input type="text" autocomplete="no" maxlength="4" id="tps_create_stub_employeeProfile_socialSecurityNumber_1" class="form-block--inline-label tps-theme--ssn check-number form-input fm-pristine fm-valid fm-not-empty fm-touched" error_message="This field is required" data-formify-ptarget="1">' +
   '<div class="form-block__error">This field is required</div></div><div class="form-block__error">This field is required</div></div><div class="form-block__error">' +
-  "This social security number is invalid. Please fill at least the last 4 digits of the SSN.</div></div>";
+  '"This social security number is invalid. Please fill at least the last 4 digits of the SSN.</div></div>"';
 // EXT
 const EXT_ID = "tps_create_stub_companyProfile_phoneNumberExt";
+
+// EMPLOYEE STREET ADDRESS
+const EMPLOYEE_STREET_ADRESS_ID =
+  "tps_create_stub_employeeProfile_address_streetAddress";
+const EMPLOYEE_STREET_ADRESS_HTML =
+  '<div ><span class="tps-theme--wl__star">*</span><span class="tps-theme--wl__content">Employee Address</span></div>';
+const EMPLOYEE_ADDRES_CITY_ID = "tps_create_stub_employeeProfile_address_city";
+const EMPLOYEE_ADDRES_ZIP_CODE_ID =
+  "tps_create_stub_employeeProfile_address_zipCode";
+const EMPLOYEE_ADDRES_CITY_HTML =
+  '<div ><span class="tps-theme--wl__star">*</span><span class="tps-theme--wl__content">City</span></div>';
+const EMPLOYEE_ADDRES_ZIP_CODE_HTML =
+  '<div ><span class="tps-theme--wl__star">*</span><span class="tps-theme--wl__content">Zip Code</span></div>';
+
+const EMPLOYEE_ADDITIONAL_CLICK_LABEL_HTML =
+  '<span class="form-rest__cta">Show Optional Employee Information<span></span>(ID, Federal Filing Status, State Filing Status)</span>';
+
+const EMPLOYEE_SOME_ID = "tps_create_stub_employeeProfile_employeeID";
+
+// HOURLY RATE CONST
+const HOURLY_RATE_ID = "tps_create_stub_salaryProfile_hourlyRate";
+const HOURTL_RATE_HTML =
+  '<div class="form-block  "><label for="tps_create_stub_salaryProfile_hourlyRate" class="form-block__label tps-theme--wl">' +
+  '<div><span class="tps-theme--wl__star">*</span><span class="tps-theme--wl__content">Hourly Rate</span></div></label>' +
+  '<div class="form-block form-block--inline-label fm-pristine fm-valid fm-untouched fm-empty"><div class="form-block form-block--inline-label fm-pristine fm-valid fm-not-empty fm-touched">' +
+  '<label for="tps_create_stub_salaryProfile_hourlyRate_1" class="form-block__label tps-theme--hr__label">$</label>' +
+  '<input type="text" autocomplete="no" placeholder="0.00" id="tps_create_stub_salaryProfile_hourlyRate_1" class="form-block--inline-label tps-theme--hr check-number form-input fm-pristine fm-valid fm-not-empty fm-touched" error_message="This field is required" data-formify-ptarget="1">';
 
 /**
  * company name actions
@@ -118,6 +147,82 @@ employeeFNLabel.innerHTML = EMPLOYEE_FULL_NAME_HTML;
 
 // Social security number
 const socialSecurityNumber = document.getElementById(SOCIAL_SECURITY_NUMBER_ID);
-const parentElement = socialSecurityNumber.parentElement;
-parentElement.outerHTML = SOCIAL_SECURITY_INPUT_HTML;
+if (socialSecurityNumber) {
+  const parentElement = socialSecurityNumber.parentElement;
+  parentElement.outerHTML = SOCIAL_SECURITY_INPUT_HTML;
+}
+
 document.querySelector(".tps-address__block").classList.remove("u-hidden");
+
+// employ address
+const employeeStreetAddress = document.getElementById(
+  EMPLOYEE_STREET_ADRESS_ID
+);
+const emStreetAddressLabel =
+  employeeStreetAddress.parentElement.querySelector("label");
+emStreetAddressLabel.classList.add("tps-theme--cl");
+emStreetAddressLabel.innerHTML = EMPLOYEE_STREET_ADRESS_HTML;
+
+const employeeAddressCity = document.getElementById(EMPLOYEE_ADDRES_CITY_ID);
+const employeeAddressCityLabel =
+  employeeAddressCity.parentElement.querySelector("label");
+employeeAddressCityLabel.classList.add("tps-theme--cl");
+employeeAddressCityLabel.innerHTML = EMPLOYEE_ADDRES_CITY_HTML;
+
+const employeeAddressZipCode = document.getElementById(
+  EMPLOYEE_ADDRES_ZIP_CODE_ID
+);
+const employeeAddressZipCodeLabel =
+  employeeAddressZipCode.parentElement.querySelector("label");
+employeeAddressZipCodeLabel.classList.add("tps-theme--cl");
+employeeAddressZipCodeLabel.innerHTML = EMPLOYEE_ADDRES_ZIP_CODE_HTML;
+
+const hiddenElements = document.querySelectorAll("div .tps-address__block");
+const hiddenDetails = employeeStreetAddress.closest("div .form-rest");
+hiddenDetails.classList.add("form-rest--show");
+
+let parentForHiddenElement;
+for (let i = 0; i < hiddenElements.length; i++) {
+  if (hiddenElements[i].classList.contains("u-hidden")) {
+    hiddenElements[i].classList.remove("u-hidden");
+    if (hiddenElements[i].closest("div .form-rest__content")) {
+      parentForHiddenElement = hiddenElements[i].closest(
+        "div .form-rest__content"
+      );
+    }
+  }
+}
+// cons
+
+for (let i = 0; i < parentForHiddenElement.children.length; i++) {
+  if (i == 0) continue;
+  parentForHiddenElement.children[i].classList.add("u-hidden");
+}
+
+let employeeAdditionalClickLabel = document.createElement("div");
+employeeAdditionalClickLabel.innerHTML = EMPLOYEE_ADDITIONAL_CLICK_LABEL_HTML;
+employeeAdditionalClickLabel.style.cursor = "pointer";
+employeeAdditionalClickLabel.style.paddingBottom = "8px";
+let elementToInsertBefor = document.getElementById(EMPLOYEE_SOME_ID);
+parentForHiddenElement.insertBefore(
+  employeeAdditionalClickLabel,
+  elementToInsertBefor.parentNode
+);
+
+employeeAdditionalClickLabel.onclick = () => {
+  for (let i = 0; i < parentForHiddenElement.children.length; i++) {
+    if (i == 0) continue;
+    if (i == 1) continue;
+    if (parentForHiddenElement.children[i].classList.contains("u-hidden")) {
+      parentForHiddenElement.children[i].classList.remove("u-hidden");
+    } else {
+      parentForHiddenElement.children[i].classList.add("u-hidden");
+    }
+  }
+};
+
+const hourlyRate = document.getElementById(HOURLY_RATE_ID);
+if (hourlyRate) {
+  const parentElement = hourlyRate.parentElement;
+  parentElement.outerHTML = HOURTL_RATE_HTML;
+}
