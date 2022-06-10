@@ -5,12 +5,14 @@
   padding-left: 65px;
 }
 .tps-theme--ssn {
-  width: 181px !important;
+  width: 85px !important;
+  box-sizing: border-box !important;
 }
 .tps-theme--ssn__label {
-  width: 96px;
-  text-align: center;
-  justify-content: center;
+  width: 96px !important;
+  text-align: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
 }
 .tps-theme--wl__star {
   color: red !important;
