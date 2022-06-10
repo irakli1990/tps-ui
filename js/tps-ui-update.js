@@ -44,11 +44,14 @@ const SOCIAL_SECURITY_NUMBER_ID =
 const SOCIAL_SECURITY_NUMBER_HTML =
   '<div ><span class="tps-theme--wl__star">*</span><span class="tps-theme--wl__content">Last 4 Digits of employee Social Security Number</span></div>';
 const SOCIAL_SECURITY_INPUT_HTML =
-  '<div class="form-block form-block--inline-label fm-pristine fm-valid fm-not-empty fm-touched">' +
-  '<label for="tps_create_stub_employeeProfile_socialSecurityNumber" class="form-block__label">' +
-  'XXX-XX-</label><input type="text" autocomplete="no" id="tps_create_stub_employeeProfile_socialSecurityNumber"' +
-  'class="form-block--inline-label check-number form-input fm-pristine fm-valid fm-not-empty fm-touched" error_message="This field is required" data-formify-ptarget="1">' +
-  '<div class="form-block__error">This field is required</div></div>';
+  '<div class="form-block  "><label for="tps_create_stub_employeeProfile_socialSecurityNumber" class="form-block__label tps-theme--wl">' +
+  '<div><span class="tps-theme--wl__star">*</span><span class="tps-theme--wl__content">Last 4 Digits of employee Social Security Number</span></div></label>' +
+  '<div class="form-block__notice">This data is stored securely and never shared with any third party. It is only used to generate your paystub.</div>' +
+  '<div class="form-block form-block--inline-label fm-pristine fm-valid fm-untouched fm-empty"><div class="form-block form-block--inline-label fm-pristine fm-valid fm-not-empty fm-touched">' +
+  '<label for="tps_create_stub_employeeProfile_socialSecurityNumber_1" class="form-block__label tps-theme--ssn__label">XXX-XX-</label>' +
+  '<input type="text" autocomplete="no" maxlength="4" id="tps_create_stub_employeeProfile_socialSecurityNumber_1" class="form-block--inline-label tps-theme--ssn check-number form-input fm-pristine fm-valid fm-not-empty fm-touched" error_message="This field is required" data-formify-ptarget="1">' +
+  '<div class="form-block__error">This field is required</div></div><div class="form-block__error">This field is required</div></div><div class="form-block__error">' +
+  "This social security number is invalid. Please fill at least the last 4 digits of the SSN.</div></div>";
 // EXT
 const EXT_ID = "tps_create_stub_companyProfile_phoneNumberExt";
 
@@ -115,38 +118,6 @@ employeeFNLabel.innerHTML = EMPLOYEE_FULL_NAME_HTML;
 
 // Social security number
 const socialSecurityNumber = document.getElementById(SOCIAL_SECURITY_NUMBER_ID);
-const sSNumberLabel = socialSecurityNumber.parentElement.querySelector("label");
-sSNumberLabel.classList.add("tps-theme--wl");
-sSNumberLabel.innerHTML = SOCIAL_SECURITY_NUMBER_HTML;
-
-if (socialSecurityNumber.outerHTML) {
-  socialSecurityNumber.outerHTML = SOCIAL_SECURITY_INPUT_HTML;
-  const labels = socialSecurityNumber.parentElement.querySelectorAll("label");
-  if (labels.length > 1) {
-    labels[0].remove();
-    labels[1].classList.add("tps-theme--ssn__label");
-    console.log("aa");
-  }
-  console.log("aa1");
-
-  socialSecurityNumber.classList.add("form-input__ssn");
-} else {
-  const tmpObj = document.createElement("div");
-  tmpObj.innerHTML = SOCIAL_SECURITY_INPUT_HTML;
-  const parentObject = socialSecurityNumber.parentElement;
-  parentObject.replaceChild(tmpObj, socialSecurityNumber); //here we placing our temporary data instead of our target, so we can find it then and replace it into whatever we want to replace to
-  parentObject.innerHTML = parentObject.innerHTML.replace(
-    SOCIAL_SECURITY_INPUT_HTML,
-    str
-  );
-  if (labels.length > 1) {
-    labels[0].remove();
-    labels[1].classList.add("tps-theme--ssn__label");
-    console.log("bbb");
-  }
-  console.log("bb1");
-
-  socialSecurityNumber.classList.add("form-input__ssn");
-}
-
+const parentElement = socialSecurityNumber.parentElement;
+parentElement.outerHTML = SOCIAL_SECURITY_INPUT_HTML;
 document.querySelector(".tps-address__block").classList.remove("u-hidden");
