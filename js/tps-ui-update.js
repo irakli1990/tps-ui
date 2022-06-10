@@ -119,7 +119,34 @@ const sSNumberLabel = socialSecurityNumber.parentElement.querySelector("label");
 sSNumberLabel.classList.add("tps-theme--wl");
 sSNumberLabel.innerHTML = SOCIAL_SECURITY_NUMBER_HTML;
 
-socialSecurityNumber.outerHTML = SOCIAL_SECURITY_INPUT_HTML;
-sSNumberLabel.classList.add("tps-theme--ssn__label");
+if (socialSecurityNumber.outerHTML) {
+  socialSecurityNumber.outerHTML = SOCIAL_SECURITY_INPUT_HTML;
+  const labels = socialSecurityNumber.parentElement.querySelectorAll("label");
+  if (labels.length > 1) {
+    labels[0].remove();
+    labels[1].classList.add("tps-theme--ssn__label");
+    console.log("aa");
+  }
+  console.log("aa1");
+
+  socialSecurityNumber.classList.add("form-input__ssn");
+} else {
+  const tmpObj = document.createElement("div");
+  tmpObj.innerHTML = SOCIAL_SECURITY_INPUT_HTML;
+  const parentObject = socialSecurityNumber.parentElement;
+  parentObject.replaceChild(tmpObj, socialSecurityNumber); //here we placing our temporary data instead of our target, so we can find it then and replace it into whatever we want to replace to
+  parentObject.innerHTML = parentObject.innerHTML.replace(
+    SOCIAL_SECURITY_INPUT_HTML,
+    str
+  );
+  if (labels.length > 1) {
+    labels[0].remove();
+    labels[1].classList.add("tps-theme--ssn__label");
+    console.log("bbb");
+  }
+  console.log("bb1");
+
+  socialSecurityNumber.classList.add("form-input__ssn");
+}
 
 document.querySelector(".tps-address__block").classList.remove("u-hidden");
