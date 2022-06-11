@@ -324,20 +324,21 @@ for (let i = 0; i < hiddenElements.length; i++) {
 }
 // cons
 
-for (let i = 0; i < parentForHiddenElement.children.length; i++) {
-  if (i == 0) continue;
-  parentForHiddenElement.children[i].classList.add("u-hidden");
+if (parentForHiddenElement) {
+  for (let i = 0; i < parentForHiddenElement.children.length; i++) {
+    if (i == 0) continue;
+    parentForHiddenElement.children[i].classList.add("u-hidden");
+  }
+  let employeeAdditionalClickLabel = document.createElement("div");
+  employeeAdditionalClickLabel.innerHTML = EMPLOYEE_ADDITIONAL_CLICK_LABEL_HTML;
+  employeeAdditionalClickLabel.style.cursor = "pointer";
+  employeeAdditionalClickLabel.style.paddingBottom = "8px";
+  let elementToInsertBefor = document.getElementById(EMPLOYEE_SOME_ID);
+  parentForHiddenElement.insertBefore(
+    employeeAdditionalClickLabel,
+    elementToInsertBefor.parentNode
+  );
 }
-
-let employeeAdditionalClickLabel = document.createElement("div");
-employeeAdditionalClickLabel.innerHTML = EMPLOYEE_ADDITIONAL_CLICK_LABEL_HTML;
-employeeAdditionalClickLabel.style.cursor = "pointer";
-employeeAdditionalClickLabel.style.paddingBottom = "8px";
-let elementToInsertBefor = document.getElementById(EMPLOYEE_SOME_ID);
-parentForHiddenElement.insertBefore(
-  employeeAdditionalClickLabel,
-  elementToInsertBefor.parentNode
-);
 
 employeeAdditionalClickLabel.onclick = () => {
   for (let i = 0; i < parentForHiddenElement.children.length; i++) {
