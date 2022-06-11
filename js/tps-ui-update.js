@@ -338,19 +338,18 @@ if (parentForHiddenElement) {
     employeeAdditionalClickLabel,
     elementToInsertBefor.parentNode
   );
-}
-
-employeeAdditionalClickLabel.onclick = () => {
-  for (let i = 0; i < parentForHiddenElement.children.length; i++) {
-    if (i == 0) continue;
-    if (i == 1) continue;
-    if (parentForHiddenElement.children[i].classList.contains("u-hidden")) {
-      parentForHiddenElement.children[i].classList.remove("u-hidden");
-    } else {
-      parentForHiddenElement.children[i].classList.add("u-hidden");
+  employeeAdditionalClickLabel.onclick = () => {
+    for (let i = 0; i < parentForHiddenElement.children.length; i++) {
+      if (i == 0) continue;
+      if (i == 1) continue;
+      if (parentForHiddenElement.children[i].classList.contains("u-hidden")) {
+        parentForHiddenElement.children[i].classList.remove("u-hidden");
+      } else {
+        parentForHiddenElement.children[i].classList.add("u-hidden");
+      }
     }
-  }
-};
+  };
+}
 
 const hourlyRate = document.getElementById(HOURLY_RATE_ID);
 if (hourlyRate) {
