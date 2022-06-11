@@ -307,7 +307,7 @@ employeeApt.removeAttribute("placeholder");
 
 const hiddenElements = document.querySelectorAll("div .tps-address__block");
 const hiddenDetails = employeeStreetAddress.closest("div .form-rest");
-hiddenDetails.classList.add("form-rest--show");
+if (hiddenElements) hiddenDetails.classList.add("form-rest--show");
 
 let parentForHiddenElement;
 for (let i = 0; i < hiddenElements.length; i++) {
