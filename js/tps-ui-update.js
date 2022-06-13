@@ -417,287 +417,297 @@ const ADD_PAY_DATE_BUTTON_HTML = `<div class="tps-theme--ca collection__add">
 </div>
 `;
 
-/**
- * company name actions
- */
-const companyName = document.getElementById(COMPANY_NAME_ID);
-const companyeNameLabel = companyName.parentElement.querySelector("label");
-companyeNameLabel.classList.add("tps-theme--wl");
-companyeNameLabel.innerHTML = COMPANY_NAME_LABEL_HTML;
-companyName.removeAttribute("placeholder");
-const requiredIndicator = document.createElement("div");
-requiredIndicator.innerHTML = REQUAIRED_INDICATOR_LABEL_HTML;
-const sectionBlock = companyName.parentElement.closest("div .section-block");
-const title = sectionBlock.querySelector("h2");
-sectionBlock.insertBefore(requiredIndicator, title);
-document.querySelector(".form-section__required").remove();
-/**
- * street address actions
- */
-const streetAddress = document.getElementById(SRTEET_ADRESS_ID);
-const streetAddressLabel = streetAddress.parentElement.querySelector("label");
-streetAddressLabel.classList.add("tps-theme--wl");
-streetAddressLabel.innerHTML = SRTEET_ADRESS_LABEL_HTML;
-streetAddress.removeAttribute("placeholder");
+setInterval(() => {
+  /**
+   * company name actions
+   */
+  const companyName = document.getElementById(COMPANY_NAME_ID);
+  const companyeNameLabel = companyName.parentElement.querySelector("label");
+  companyeNameLabel.classList.add("tps-theme--wl");
+  companyeNameLabel.innerHTML = COMPANY_NAME_LABEL_HTML;
+  companyName.removeAttribute("placeholder");
+  const requiredIndicator = document.createElement("div");
+  requiredIndicator.innerHTML = REQUAIRED_INDICATOR_LABEL_HTML;
+  const sectionBlock = companyName.parentElement.closest("div .section-block");
+  const title = sectionBlock.querySelector("h2");
+  sectionBlock.insertBefore(requiredIndicator, title);
+  document.querySelector(".form-section__required").remove();
+  /**
+   * street address actions
+   */
+  const streetAddress = document.getElementById(SRTEET_ADRESS_ID);
+  const streetAddressLabel = streetAddress.parentElement.querySelector("label");
+  streetAddressLabel.classList.add("tps-theme--wl");
+  streetAddressLabel.innerHTML = SRTEET_ADRESS_LABEL_HTML;
+  streetAddress.removeAttribute("placeholder");
 
-/**
- * city adrtess block
- */
-const city = document.getElementById(CITY_NAME_ID);
-const cityLabel = city.parentElement.querySelector("label");
-cityLabel.classList.add("tps-theme--wl");
-cityLabel.innerHTML = CITY_NAME_LABEL_HTML;
-city.removeAttribute("placeholder");
+  /**
+   * city adrtess block
+   */
+  const city = document.getElementById(CITY_NAME_ID);
+  const cityLabel = city.parentElement.querySelector("label");
+  cityLabel.classList.add("tps-theme--wl");
+  cityLabel.innerHTML = CITY_NAME_LABEL_HTML;
+  city.removeAttribute("placeholder");
 
-// zip code
-const zip = document.getElementById(ZIP_ID);
-const zipLabel = zip.parentElement.querySelector("label");
-zipLabel.classList.add("tps-theme--wl");
-zipLabel.innerHTML = ZIP_LABEL_HTML;
-zip.removeAttribute("placeholder");
+  // zip code
+  const zip = document.getElementById(ZIP_ID);
+  const zipLabel = zip.parentElement.querySelector("label");
+  zipLabel.classList.add("tps-theme--wl");
+  zipLabel.innerHTML = ZIP_LABEL_HTML;
+  zip.removeAttribute("placeholder");
 
-// state
-const state = document.getElementById(STATE_ID);
-const stateLabel = state.parentElement.querySelector("label");
-stateLabel.innerText = "State";
+  // state
+  const state = document.getElementById(STATE_ID);
+  const stateLabel = state.parentElement.querySelector("label");
+  stateLabel.innerText = "State";
 
-// APT
-const apt = document.getElementById(APT_ID);
-apt.removeAttribute("placeholder");
+  // APT
+  const apt = document.getElementById(APT_ID);
+  apt.removeAttribute("placeholder");
 
-// company logo
-const companyLogo = document.getElementById(COMPANU_LOGO_ID);
-const companyLoagoLabel = companyLogo.parentElement.querySelector("label");
-companyLoagoLabel.classList.add("tps-theme--cl");
-companyLogo.closest("div .form-rest").classList.add("form-rest--show");
-companyLogo.removeAttribute("placeholder");
+  // company logo
+  const companyLogo = document.getElementById(COMPANU_LOGO_ID);
+  const companyLoagoLabel = companyLogo.parentElement.querySelector("label");
+  companyLoagoLabel.classList.add("tps-theme--cl");
+  companyLogo.closest("div .form-rest").classList.add("form-rest--show");
+  companyLogo.removeAttribute("placeholder");
 
-// ext
-const ext = document.getElementById(EXT_NO_ID);
-ext.removeAttribute("placeholder");
+  // ext
+  const ext = document.getElementById(EXT_NO_ID);
+  ext.removeAttribute("placeholder");
 
-// Phone number
-const phoneNimber = document.getElementById(PHONE_NUMBER_ID);
-phoneNimber.setAttribute("placeholder", PHONE_NUMBER_PLACEHOLDER);
+  // Phone number
+  const phoneNimber = document.getElementById(PHONE_NUMBER_ID);
+  phoneNimber.setAttribute("placeholder", PHONE_NUMBER_PLACEHOLDER);
 
-// EIN
-const ein = document.getElementById(EIN_ID);
-const einLabel = ein.parentElement.querySelector("label");
-einLabel.innerText = EIN_LABEL_TEXT;
-ein.setAttribute("placeholder", EIN_PLACEHOLDER);
+  // EIN
+  const ein = document.getElementById(EIN_ID);
+  const einLabel = ein.parentElement.querySelector("label");
+  einLabel.innerText = EIN_LABEL_TEXT;
+  ein.setAttribute("placeholder", EIN_PLACEHOLDER);
 
-// Employee full name
-const employeeFullName = document.getElementById(EMPLOYEE_FULL_NAME_ID);
-const employeeFNLabel = employeeFullName.parentElement.querySelector("label");
-employeeFNLabel.classList.add("tps-theme--wl");
-employeeFNLabel.innerHTML = EMPLOYEE_FULL_NAME_HTML;
-employeeFullName.removeAttribute("placeholder");
+  // Employee full name
+  const employeeFullName = document.getElementById(EMPLOYEE_FULL_NAME_ID);
+  const employeeFNLabel = employeeFullName.parentElement.querySelector("label");
+  employeeFNLabel.classList.add("tps-theme--wl");
+  employeeFNLabel.innerHTML = EMPLOYEE_FULL_NAME_HTML;
+  employeeFullName.removeAttribute("placeholder");
 
-// Social security number
-const socialSecurityNumber = document.getElementById(SOCIAL_SECURITY_NUMBER_ID);
-if (socialSecurityNumber) {
-  const parentElement = socialSecurityNumber.parentElement;
-  parentElement.outerHTML = SOCIAL_SECURITY_INPUT_HTML;
-}
-
-document.querySelector(".tps-address__block").classList.remove("u-hidden");
-
-// federal allowness
-const federalAllowness = document.getElementById(FEDERALL_ALLOWNESS_ID);
-federalAllowness.removeAttribute("placeholder");
-
-// employ address
-const employeeStreetAddress = document.getElementById(
-  EMPLOYEE_STREET_ADRESS_ID
-);
-const emStreetAddressLabel =
-  employeeStreetAddress.parentElement.querySelector("label");
-emStreetAddressLabel.classList.add("tps-theme--cl");
-emStreetAddressLabel.innerHTML = EMPLOYEE_STREET_ADRESS_HTML;
-employeeStreetAddress.removeAttribute("placeholder");
-
-const employeeAddressCity = document.getElementById(EMPLOYEE_ADDRES_CITY_ID);
-const employeeAddressCityLabel =
-  employeeAddressCity.parentElement.querySelector("label");
-employeeAddressCityLabel.classList.add("tps-theme--cl");
-employeeAddressCityLabel.innerHTML = EMPLOYEE_ADDRES_CITY_HTML;
-employeeAddressCity.removeAttribute("placeholder");
-
-const employeeAddressZipCode = document.getElementById(
-  EMPLOYEE_ADDRES_ZIP_CODE_ID
-);
-const employeeAddressZipCodeLabel =
-  employeeAddressZipCode.parentElement.querySelector("label");
-employeeAddressZipCodeLabel.classList.add("tps-theme--cl");
-employeeAddressZipCodeLabel.innerHTML = EMPLOYEE_ADDRES_ZIP_CODE_HTML;
-employeeAddressZipCode.removeAttribute("placeholder");
-
-const employeeApt = document.getElementById(EMPLOYEE_APT_ID);
-employeeApt.removeAttribute("placeholder");
-
-const hiddenElements = document.querySelectorAll("div .tps-address__block");
-const hiddenDetails = employeeStreetAddress.closest("div .form-rest");
-if (hiddenElements && hiddenDetails) {
-  hiddenDetails.classList.add("form-rest--show");
-}
-
-console.log(hiddenElements);
-
-let parentForHiddenElement;
-for (let i = 0; i < hiddenElements.length; i++) {
-  if (hiddenElements[i].classList.contains("u-hidden")) {
-    hiddenElements[i].classList.remove("u-hidden");
-    if (hiddenElements[i].closest("div .form-rest__content")) {
-      parentForHiddenElement = hiddenElements[i].closest(
-        "div .form-rest__content"
-      );
-    }
+  // Social security number
+  const socialSecurityNumber = document.getElementById(
+    SOCIAL_SECURITY_NUMBER_ID
+  );
+  if (socialSecurityNumber) {
+    const parentElement = socialSecurityNumber.parentElement;
+    parentElement.outerHTML = SOCIAL_SECURITY_INPUT_HTML;
   }
-}
 
-for (let i = 0; i < parentForHiddenElement.children.length; i++) {
-  if (i == 0) continue;
-  parentForHiddenElement.children[i].classList.add("u-hidden");
-}
+  document.querySelector(".tps-address__block").classList.remove("u-hidden");
 
-let employeeAdditionalClickLabel = document.createElement("div");
-employeeAdditionalClickLabel.innerHTML = EMPLOYEE_ADDITIONAL_CLICK_LABEL_HTML;
-employeeAdditionalClickLabel.style.cursor = "pointer";
-employeeAdditionalClickLabel.style.paddingBottom = "8px";
-let elementToInsertBefor = document.getElementById(EMPLOYEE_SOME_ID);
-parentForHiddenElement.insertBefore(
-  employeeAdditionalClickLabel,
-  elementToInsertBefor.parentNode
-);
-if (employeeAdditionalClickLabel) {
-  employeeAdditionalClickLabel.onclick = () => {
-    for (let i = 0; i < parentForHiddenElement.children.length; i++) {
-      if (i == 0) continue;
-      if (i == 1) continue;
-      if (parentForHiddenElement.children[i].classList.contains("u-hidden")) {
-        parentForHiddenElement.children[i].classList.remove("u-hidden");
-        employeeAdditionalClickLabel.innerHTML =
-          EMPLOYEE_ADDITIONAL_CLICK_LABEL_OPENED_HTML;
-      } else {
-        parentForHiddenElement.children[i].classList.add("u-hidden");
-        employeeAdditionalClickLabel.innerHTML =
-          EMPLOYEE_ADDITIONAL_CLICK_LABEL_HTML;
+  // federal allowness
+  const federalAllowness = document.getElementById(FEDERALL_ALLOWNESS_ID);
+  federalAllowness.removeAttribute("placeholder");
+
+  // employ address
+  const employeeStreetAddress = document.getElementById(
+    EMPLOYEE_STREET_ADRESS_ID
+  );
+  const emStreetAddressLabel =
+    employeeStreetAddress.parentElement.querySelector("label");
+  emStreetAddressLabel.classList.add("tps-theme--cl");
+  emStreetAddressLabel.innerHTML = EMPLOYEE_STREET_ADRESS_HTML;
+  employeeStreetAddress.removeAttribute("placeholder");
+
+  const employeeAddressCity = document.getElementById(EMPLOYEE_ADDRES_CITY_ID);
+  const employeeAddressCityLabel =
+    employeeAddressCity.parentElement.querySelector("label");
+  employeeAddressCityLabel.classList.add("tps-theme--cl");
+  employeeAddressCityLabel.innerHTML = EMPLOYEE_ADDRES_CITY_HTML;
+  employeeAddressCity.removeAttribute("placeholder");
+
+  const employeeAddressZipCode = document.getElementById(
+    EMPLOYEE_ADDRES_ZIP_CODE_ID
+  );
+  const employeeAddressZipCodeLabel =
+    employeeAddressZipCode.parentElement.querySelector("label");
+  employeeAddressZipCodeLabel.classList.add("tps-theme--cl");
+  employeeAddressZipCodeLabel.innerHTML = EMPLOYEE_ADDRES_ZIP_CODE_HTML;
+  employeeAddressZipCode.removeAttribute("placeholder");
+
+  const employeeApt = document.getElementById(EMPLOYEE_APT_ID);
+  employeeApt.removeAttribute("placeholder");
+
+  const hiddenElements = document.querySelectorAll("div .tps-address__block");
+  const hiddenDetails = employeeStreetAddress.closest("div .form-rest");
+  if (hiddenElements && hiddenDetails) {
+    hiddenDetails.classList.add("form-rest--show");
+  }
+
+  console.log(hiddenElements);
+
+  let parentForHiddenElement;
+  for (let i = 0; i < hiddenElements.length; i++) {
+    if (hiddenElements[i].classList.contains("u-hidden")) {
+      hiddenElements[i].classList.remove("u-hidden");
+      if (hiddenElements[i].closest("div .form-rest__content")) {
+        parentForHiddenElement = hiddenElements[i].closest(
+          "div .form-rest__content"
+        );
       }
     }
-  };
-}
+  }
 
-const hourlyRate = document.getElementById(HOURLY_RATE_ID);
-if (hourlyRate) {
-  const parentElement = hourlyRate.parentElement;
-  parentElement.outerHTML = HOURTL_RATE_HTML;
-}
+  for (let i = 0; i < parentForHiddenElement.children.length; i++) {
+    if (i == 0) continue;
+    parentForHiddenElement.children[i].classList.add("u-hidden");
+  }
 
-const w4 = document.getElementById(W4_ID);
-w4.className = "";
-w4.parentElement.querySelector("label").remove();
-const w4Label = document.createElement("label");
-w4Label.innerText = "Add employee hire date";
-w4Label.setAttribute("for", ADD_EMPLOYEE_HIRE_DATE_ID);
-w4Label.classList.add("form-block__label");
-w4.parentElement.style.display = "flex";
-w4.parentElement.style.width = "100%";
-w4.parentElement.style.flexDirection = "row";
-w4.parentElement.style.gap = "5px";
+  let employeeAdditionalClickLabel = document.createElement("div");
+  employeeAdditionalClickLabel.innerHTML = EMPLOYEE_ADDITIONAL_CLICK_LABEL_HTML;
+  employeeAdditionalClickLabel.style.cursor = "pointer";
+  employeeAdditionalClickLabel.style.paddingBottom = "8px";
+  let elementToInsertBefor = document.getElementById(EMPLOYEE_SOME_ID);
+  parentForHiddenElement.insertBefore(
+    employeeAdditionalClickLabel,
+    elementToInsertBefor.parentNode
+  );
+  if (employeeAdditionalClickLabel) {
+    employeeAdditionalClickLabel.onclick = () => {
+      for (let i = 0; i < parentForHiddenElement.children.length; i++) {
+        if (i == 0) continue;
+        if (i == 1) continue;
+        if (parentForHiddenElement.children[i].classList.contains("u-hidden")) {
+          parentForHiddenElement.children[i].classList.remove("u-hidden");
+          employeeAdditionalClickLabel.innerHTML =
+            EMPLOYEE_ADDITIONAL_CLICK_LABEL_OPENED_HTML;
+        } else {
+          parentForHiddenElement.children[i].classList.add("u-hidden");
+          employeeAdditionalClickLabel.innerHTML =
+            EMPLOYEE_ADDITIONAL_CLICK_LABEL_HTML;
+        }
+      }
+    };
+  }
 
-w4.parentElement.parentElement.querySelector("div .form-block__label").remove();
+  const hourlyRate = document.getElementById(HOURLY_RATE_ID);
+  if (hourlyRate) {
+    const parentElement = hourlyRate.parentElement;
+    parentElement.outerHTML = HOURTL_RATE_HTML;
+  }
 
-w4.parentElement.insertBefore(w4Label, w4.nextSibling);
+  const w4 = document.getElementById(W4_ID);
+  w4.className = "";
+  w4.parentElement.querySelector("label").remove();
+  const w4Label = document.createElement("label");
+  w4Label.innerText = "Add employee hire date";
+  w4Label.setAttribute("for", ADD_EMPLOYEE_HIRE_DATE_ID);
+  w4Label.classList.add("form-block__label");
+  w4.parentElement.style.display = "flex";
+  w4.parentElement.style.width = "100%";
+  w4.parentElement.style.flexDirection = "row";
+  w4.parentElement.style.gap = "5px";
 
-const addHireDate = document.getElementById(ADD_EMPLOYEE_HIRE_DATE_ID);
-addHireDate.className = "";
-addHireDate.parentElement.querySelector("label").remove();
-const addHireDateLabel = document.createElement("label");
-addHireDateLabel.innerText = "Using a W4 from 2020 or beyond";
-addHireDateLabel.setAttribute("for", ADD_EMPLOYEE_HIRE_DATE_ID);
-addHireDateLabel.classList.add("form-block__label");
-addHireDate.parentElement.style.display = "flex";
-addHireDate.parentElement.style.width = "100%";
-addHireDate.parentElement.style.flexDirection = "row";
-addHireDate.parentElement.style.gap = "5px";
+  w4.parentElement.parentElement
+    .querySelector("div .form-block__label")
+    .remove();
 
-addHireDate.parentElement.parentElement
-  .querySelector("div .form-block__label")
-  .remove();
+  w4.parentElement.insertBefore(w4Label, w4.nextSibling);
 
-addHireDate.parentElement.insertBefore(
-  addHireDateLabel,
-  addHireDate.nextSibling
-);
+  const addHireDate = document.getElementById(ADD_EMPLOYEE_HIRE_DATE_ID);
+  addHireDate.className = "";
+  addHireDate.parentElement.querySelector("label").remove();
+  const addHireDateLabel = document.createElement("label");
+  addHireDateLabel.innerText = "Using a W4 from 2020 or beyond";
+  addHireDateLabel.setAttribute("for", ADD_EMPLOYEE_HIRE_DATE_ID);
+  addHireDateLabel.classList.add("form-block__label");
+  addHireDate.parentElement.style.display = "flex";
+  addHireDate.parentElement.style.width = "100%";
+  addHireDate.parentElement.style.flexDirection = "row";
+  addHireDate.parentElement.style.gap = "5px";
 
-const advancedPayDate = document.getElementById(ADVANSED_PAY_DATE_ID);
-advancedPayDate.className = "";
-advancedPayDate.parentElement.querySelector("label").remove();
-const advancedPayDateLabel = document.createElement("label");
-advancedPayDateLabel.innerText = "Show Advanced Pay Date Fields";
-advancedPayDateLabel.style.color = "black";
-advancedPayDateLabel.setAttribute("for", ADVANSED_PAY_DATE_ID);
-advancedPayDateLabel.classList.add("form-block__label");
-advancedPayDate.parentElement.style.display = "flex";
-advancedPayDate.parentElement.style.width = "100%";
-advancedPayDate.parentElement.style.flexDirection = "row";
-advancedPayDate.parentElement.style.gap = "5px";
+  addHireDate.parentElement.parentElement
+    .querySelector("div .form-block__label")
+    .remove();
 
-advancedPayDate.parentElement.parentElement.classList.remove("alternative");
-advancedPayDate.parentElement.parentElement
-  .querySelector("div .form-block__label")
-  .remove();
+  addHireDate.parentElement.insertBefore(
+    addHireDateLabel,
+    addHireDate.nextSibling
+  );
 
-advancedPayDate.parentElement.insertBefore(
-  advancedPayDateLabel,
-  advancedPayDate.nextSibling
-);
+  const advancedPayDate = document.getElementById(ADVANSED_PAY_DATE_ID);
+  advancedPayDate.className = "";
+  advancedPayDate.parentElement.querySelector("label").remove();
+  const advancedPayDateLabel = document.createElement("label");
+  advancedPayDateLabel.innerText = "Show Advanced Pay Date Fields";
+  advancedPayDateLabel.style.color = "black";
+  advancedPayDateLabel.setAttribute("for", ADVANSED_PAY_DATE_ID);
+  advancedPayDateLabel.classList.add("form-block__label");
+  advancedPayDate.parentElement.style.display = "flex";
+  advancedPayDate.parentElement.style.width = "100%";
+  advancedPayDate.parentElement.style.flexDirection = "row";
+  advancedPayDate.parentElement.style.gap = "5px";
 
-const payDatesNeeded = document.querySelector("div .paydates-notice");
-payDatesNeeded.outerHTML = PAY_DATES_NEEDED_HTML;
+  advancedPayDate.parentElement.parentElement.classList.remove("alternative");
+  advancedPayDate.parentElement.parentElement
+    .querySelector("div .form-block__label")
+    .remove();
 
-//remove year tag container
-const yearTagContainer = document.querySelector("div .year-tag-container");
-yearTagContainer.style.display = "none";
+  advancedPayDate.parentElement.insertBefore(
+    advancedPayDateLabel,
+    advancedPayDate.nextSibling
+  );
 
-// Pay dates
-const paydate1 = document.querySelector("div .paydates-index-wrapper");
-paydate1.className = "";
-paydate1.classList.add("tps-theme--pd");
-paydate1.parentElement.querySelector("div .paydates-line").remove();
-paydate1.parentElement.querySelector("div .collection__remove").remove();
+  const payDatesNeeded = document.querySelector("div .paydates-notice");
+  payDatesNeeded.outerHTML = PAY_DATES_NEEDED_HTML;
 
-const employeePayDate = document.getElementById(PAY_DATES_EMPLOYEE_ID);
-employeePayDate.parentElement.outerHTML = PAY_DATES_EMPLOYEE_HTML;
+  //remove year tag container
+  const yearTagContainer = document.querySelector("div .year-tag-container");
+  yearTagContainer.style.display = "none";
 
-const employeePayHours = document.getElementById(PAY_DATE_EMPLOYEE_WORKED_ID);
-employeePayHours.parentElement.outerHTML = PAY_DATE_EMPLOYEE_WORKED_HTML;
+  // Pay dates
+  const paydate1 = document.querySelector("div .paydates-index-wrapper");
+  paydate1.className = "";
+  paydate1.classList.add("tps-theme--pd");
+  paydate1.parentElement.querySelector("div .paydates-line").remove();
+  paydate1.parentElement.querySelector("div .collection__remove").remove();
 
-const employeeCheckNo = document.getElementById(PAY_DATE_CHECK_ID);
-employeeCheckNo.parentElement.classList.remove("form-block--inline-label");
-employeeCheckNo.style.width = "181px";
-employeeCheckNo.parentElement.querySelector("label").innerText = "Check Number";
-employeeCheckNo.classList.remove("form-block--inline-label");
+  const employeePayDate = document.getElementById(PAY_DATES_EMPLOYEE_ID);
+  employeePayDate.parentElement.outerHTML = PAY_DATES_EMPLOYEE_HTML;
 
-const employeeStartDate = document.getElementById(PAY_PERIOD_START_DATE_ID);
-employeeStartDate.parentElement.outerHTML = PAY_PERIOD_START_DATE_HTML;
+  const employeePayHours = document.getElementById(PAY_DATE_EMPLOYEE_WORKED_ID);
+  employeePayHours.parentElement.outerHTML = PAY_DATE_EMPLOYEE_WORKED_HTML;
 
-const employeeEndDate = document.getElementById(PAY_PERIOD_END_DATE_ID);
-employeeEndDate.parentElement.outerHTML = PAY_PERIOD_END_DATE_HTML;
+  const employeeCheckNo = document.getElementById(PAY_DATE_CHECK_ID);
+  employeeCheckNo.parentElement.classList.remove("form-block--inline-label");
+  employeeCheckNo.style.width = "181px";
+  employeeCheckNo.parentElement.querySelector("label").innerText =
+    "Check Number";
+  employeeCheckNo.classList.remove("form-block--inline-label");
 
-const employSumOfWages = document.getElementById(PAY_DATE_SUM_OF_WAGES_ID);
-employSumOfWages.parentElement.remove();
+  const employeeStartDate = document.getElementById(PAY_PERIOD_START_DATE_ID);
+  employeeStartDate.parentElement.outerHTML = PAY_PERIOD_START_DATE_HTML;
 
-const employeePpay = document.getElementById(PAY_DATE_PREVIUYSE_PAY_ID);
-employeePpay.parentElement.outerHTML = PAY_DATE_WAGES_AND_PPAY_HTML;
+  const employeeEndDate = document.getElementById(PAY_PERIOD_END_DATE_ID);
+  employeeEndDate.parentElement.outerHTML = PAY_PERIOD_END_DATE_HTML;
 
-const deduction = document.querySelector("div .js-add-addition-deduction");
-// deduction.className = "";
-deduction.querySelector("span").remove();
-deduction.innerText = "+ Add Additions and/or Deductions";
-deduction.classList.add("tps-theme--ad");
+  const employSumOfWages = document.getElementById(PAY_DATE_SUM_OF_WAGES_ID);
+  employSumOfWages.parentElement.remove();
 
-document.querySelector("div .paydates-collection").querySelector("hr").remove();
+  const employeePpay = document.getElementById(PAY_DATE_PREVIUYSE_PAY_ID);
+  employeePpay.parentElement.outerHTML = PAY_DATE_WAGES_AND_PPAY_HTML;
 
-// document.querySelector("div .collection__add").outerHTML =
-//   ADD_PAY_DATE_BUTTON_HTML;
+  const deduction = document.querySelector("div .js-add-addition-deduction");
+  // deduction.className = "";
+  deduction.querySelector("span").remove();
+  deduction.innerText = "+ Add Additions and/or Deductions";
+  deduction.classList.add("tps-theme--ad");
+
+  document
+    .querySelector("div .paydates-collection")
+    .querySelector("hr")
+    .remove();
+
+  // document.querySelector("div .collection__add").outerHTML =
+  //   ADD_PAY_DATE_BUTTON_HTML;
+}, 1000);
