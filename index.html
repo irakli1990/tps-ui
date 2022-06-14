@@ -1,3 +1,29 @@
-<div class="tps-theme--ca">
-  <span class="tps-theme--ca__content">+ Add Previous Pay Date</span>
+<div class="section-block email-block">
+  <h2 class="section-block__title">4. Email</h2>
+  <p>
+    Insert the e-mail address to which you want to receive your stub order(s)
+  </p>
+  <div
+    class="form-block fm-pristine fm-invalid fm-empty fm-invalid-value-missing fm-touched"
+  >
+    <label for="tps_create_stub_email" class="form-block__label">
+      <div>
+        <span class="tps-theme--required__star">*</span
+        ><span class="tps-theme--required__content">Your Email Address</span>
+      </div>
+    </label>
+
+    <input
+      type="email"
+      id="tps_create_stub_email"
+      name="tps_create_stub[email]"
+      required="required"
+      error_message="Please enter a valid email address"
+      data-formify-ptarget="1"
+      placeholder="This field is mandatory"
+      class="form-input fm-pristine fm-invalid fm-empty fm-invalid-value-missing fm-touched"
+      autocomplete="no"
+    />
+    <div class="form-block__error">Please enter a valid email address</div>
+  </div>
 </div>
