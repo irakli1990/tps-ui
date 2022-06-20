@@ -1,28 +1,112 @@
-.tps-theme--ssn {
+.tps-theme--regular_checkbox input {
+  visibility: visible !important;
+  width: auto !important;
+  height: auto !important;
+  margin-right: 10px !important;
+}
+.tps-theme--regular_checkbox input::after {
+  display: none !important;
+}
+.tps-theme--company-title {
+  border-bottom: none;
+  padding-bottom: 0;
+  text-transform: capitalize;
+  margin-top: 10px;
+}
+.tps-theme--social-security-number {
   width: 85px !important;
   box-sizing: border-box !important;
 }
-.tps-theme--ssn__label {
+.tps-theme--social-security-number__label {
   width: 96px !important;
   text-align: center !important;
   justify-content: center !important;
   box-sizing: border-box !important;
 }
-.tps-theme--hr {
+.tps-theme--hourly-rate {
   width: 141px !important;
   box-sizing: border-box !important;
 }
-.tps-theme--hr__label {
+.tps-theme--hourly-rate__label {
   background-color: #f0f0f0 !important;
   width: 40px !important;
   text-align: center !important;
   justify-content: center !important;
   box-sizing: border-box !important;
 }
-.tps-theme--wl__star {
+.tps-theme--divider {
+  background-color: #f0f0f0;
+  height: 1px;
+  border: 0;
+}
+.tps-theme--pay-date {
+  display: flex;
+  width: 100%;
+  height: 32px;
+  background: rgba(38, 38, 38, 0.9);
+  border-radius: 5px;
+  margin-bottom: 16px;
+}
+.tps-theme--pay-date span {
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding-left: 16px;
+}
+.tps-theme--special-tax-exemptions {
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 23px;
+  color: #1d1d1d;
+}
+.tps-theme--sapf {
+  margin-top: 25px;
+}
+.tps-theme--checkbox {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+.tps-theme--flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tps-theme--flex__item {
+  width: 48%;
+}
+.tps-theme--show-container {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 2px;
+}
+.tps-theme--show-container__subtitle {
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #0078c2;
+}
+.tps-theme--required__title {
+  margin-bottom: 10px;
+}
+.tps-theme--required__star {
   color: red !important;
 }
-.tps-theme--wl__content {
+.tps-theme--required__content {
   padding-left: 5px;
 }
 .tps-theme--hop:focus {
@@ -32,3 +116,74 @@
   background-color: #0078c2 !important;
   color: white !important;
 }
+.tps-theme--add-deductions {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+  color: #0078c2;
+}
+.tps-theme--add-special-tax {
+  margin-bottom: 35px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+  color: #0078c2;
+}
+.tps-theme--special-tax-subtitle {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+}
+.tps-theme--add-prev-date {
+  width: 193px;
+  height: 26px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+  display: flex;
+  background-color: #0078c2 !important;
+  align-items: center;
+  text-align: center;
+  text-transform: capitalize;
+  color: #ffffff !important;
+}
+.tps-theme--add-prev-date:hover {
+  background-color: #008de3 !important;
+}
+
+input[type="text"] {
+  font-size: 16px;
+  background: #f0f0f0;
+  border: 1px solid #6a6a6a !important;
+  border-radius: 5px;
+}
+
+input[type="email"] {
+  font-size: 16px;
+  background: #f0f0f0;
+  border: 1px solid #6a6a6a !important;
+  border-radius: 5px;
+}
+
+input[type="file"] {
+  font-size: 16px;
+  background: #f0f0f0;
+  border: 1px solid #6a6a6a !important;
+  border-radius: 5px;
+}
+
+select {
+  font-size: 16px;
+  background: #f0f0f0;
+  border: 1px solid #6a6a6a !important;
+  border-radius: 5px;
+} /*# sourceMappingURL=tps-ui-update.css.map */

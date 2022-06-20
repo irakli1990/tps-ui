@@ -1,4 +1,16 @@
 .tps-theme {
+  &--regular_checkbox {
+    input {
+      visibility: visible !important;
+      width: auto !important;
+      height: auto !important;
+      margin-right: 10px !important;
+    }
+    input::after {
+      display: none !important;
+    }
+  }
+
   &--company-title {
     border-bottom: none;
     padding-bottom: 0;
@@ -148,37 +160,39 @@
     color: #0078c2;
   }
 
-  &--ca {
-    margin-top: 40px;
-    margin-bottom: 40px;
-    width: 203px;
-    height: 40px;
-    background: #0078c2;
-    border-radius: 5px;
+  &--special-tax-subtitle {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  &--add-prev-date {
+    width: 193px;
+    height: 26px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20px;
     display: flex;
-    justify-content: center;
+    background-color: #0078c2 !important;
     align-items: center;
-    &__content {
-      width: 193px;
-      height: 26px;
-      left: 10px;
-      top: calc(50% - 26px / 2 - 1px);
-      font-weight: 600;
-      font-size: 15px;
-      line-height: 20px;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      text-transform: capitalize;
-      color: #ffffff;
-    }
+    text-align: center;
+    text-transform: capitalize;
+    color: #ffffff !important;
     &:hover {
-      background-color: #008de3;
+      background-color: #008de3 !important;
     }
   }
 }
 
 input[type="text"] {
+  font-size: 16px;
+  background: #f0f0f0;
+  border: 1px solid #6a6a6a !important;
+  border-radius: 5px;
+}
+
+input[type="email"] {
   font-size: 16px;
   background: #f0f0f0;
   border: 1px solid #6a6a6a !important;
@@ -196,12 +210,5 @@ select {
   font-size: 16px;
   background: #f0f0f0;
   border: 1px solid #6a6a6a !important;
-  border-radius: 5px;
-}
-
-input[type="text"]:focus {
-  font-size: 16px;
-  background: #f0f0f0;
-  border: 1px solid #6a6a6a;
   border-radius: 5px;
 }
